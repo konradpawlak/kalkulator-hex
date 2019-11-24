@@ -1,0 +1,38 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace kalkulator3
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int a = 0; int b = 0;
+
+
+            Console.WriteLine("wybiez pierwsza liczbe");
+            a = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("wybiez druga liczbe");
+            b = Convert.ToInt32(Console.ReadLine());
+
+            int c = a + b; int d = a - b; int e = a * b; int f = a / b;
+
+            string hex1 = c.ToString("X");
+            string hex2 = d.ToString("X");
+            string hex3 = e.ToString("X");
+            string hex4 = f.ToString("X");
+
+            string[] dzialania = { "suma", "roznica", "iloczyn", "iloraz" };
+            string[] wyniki = { hex1, hex2, hex3, hex4 };
+
+            Console.WriteLine("{0,-20} {1,5}\n", "dzialanie", "wynik");
+            for (int ctr = 0; ctr < dzialania.Length; ctr++)
+                Console.WriteLine("{0,-20} {1,5:N1}", dzialania[ctr], wyniki[ctr]);
+
+            Console.ReadKey();
+        }
+    }
+}
